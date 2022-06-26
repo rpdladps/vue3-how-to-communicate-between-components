@@ -17,7 +17,7 @@ const { id, pw, name } = toRefs(props.obj)
             <input type="password" v-model="pw" />
         </div>
         <div>
-            <label>Full Name</label>
+            <label>User Name</label>
             <input type="text" v-model="name" disabled/>
         </div>
     </BoxWithTitleVue>

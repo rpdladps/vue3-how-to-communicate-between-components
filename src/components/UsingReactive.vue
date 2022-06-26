@@ -20,7 +20,10 @@ const { id: nestedId, pw: nestedPw, name: nestedName } = toRefs(nestedObj)
             <br />
             Password is '{{ pw }}'.
             <br />
-            Full Name is '{{ name }}'.
+            <div>
+                <span>Change Name : </span>
+                <input type="text" v-model="name" />
+            </div>
         </BoxWithTitleVue>
 
         <BoxWithTitleVue title="Using Reactive (nested)">
@@ -29,7 +32,7 @@ const { id: nestedId, pw: nestedPw, name: nestedName } = toRefs(nestedObj)
             <br />
             Password is '{{ nestedPw }}'.
             <br />
-            Full Name is '{{ nestedName }}'.
+            Name is '{{ nestedName }}'.
         </BoxWithTitleVue>
 
     </div>
