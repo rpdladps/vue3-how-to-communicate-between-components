@@ -33,6 +33,9 @@ const reset = () => {
             <button @click="lowercase">lowercase</button>
             <button @click="reset">reset</button>
         </div>
-        <Component1Vue :obj="props.obj" />
+        <div>
+            <Component1Vue :obj="props.obj" />
+            <Component1Vue :obj="props.obj" />
+        </div>
     </BoxWithTitleVue>
 </template>

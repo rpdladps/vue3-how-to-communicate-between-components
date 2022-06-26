@@ -4,7 +4,7 @@ const props = defineProps(['title'])
 
 <template>
     <div class="box">
-        <span class="title">{{ props.title }}</span>
+        <span class="title"><strong>{{ props.title }}</strong></span>
         <slot></slot>
     </div>
 </template>

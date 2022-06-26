@@ -22,7 +22,7 @@
 
 1. 객체 이용 시 reactivity를 유지하는 것은 편리하지만 side effect를 심하게 발생시키므로 매우 주의하여 사용
 
-1. (사견) 유지보수를 생각한다면 불변성을 이용한 expose 패턴이 좋아보임. 간단한건 그냥 v-model event emit 으로 ㄱㄱ.
+1. (사견) 유지보수를 생각한다면 컴포넌트 외부에서 변경이 불가능한 expose 패턴이 좋아보임. 간단한건 그냥 v-model event emit 으로 ㄱㄱ.
 
 ## Usage
 
@@ -40,6 +40,10 @@ npm run dev
 ```
 
 ## 자세한 설명
+
+- 은 코드를 직접 열어보면 좋지요...
+
+- 코드들은 Composition API로 작성했습니다. 이해바랍니다..........
 
 ### reactive()
 
@@ -124,11 +128,11 @@ defineExpose({ constant, makeRandomConstant, msg, getMsg, makeRandomMsg, removeM
 
 - 이 패턴이 react랑 좀 비슷한 것 같기도 함 (리액트..안배워서....잘..몰...루....JSX가..뭥..)
 
-- (중요) expose는 기본적으로 불변임
+- (중요) expose는 기본적으로 외부에서 변경불가임
 
 - 컴포넌트의 데이터를 변경하려면 getter, setter를 선언 한 후 expose 해야 함
 
-- mount되어야 컴포넌트 ref에 접근할 수 있으므로, 부모 컴포넌트들의 까다로운 처리가 필요함
+- mount되어야 컴포넌트 ref에 접근할 수 있으므로, 부모 컴포넌트에서 까다로운 처리가 필요함
 
 ```html
 <!-- ... -->

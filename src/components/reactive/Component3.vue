@@ -37,6 +37,9 @@ const clear = () => {
             <button @click="reset">reset</button>
             <button @click="clear">clear</button>
         </div>
-        <Component2Vue :obj="props.obj" />
+        <div>
+            <Component2Vue :obj="props.obj" />
+            <Component2Vue :obj="props.obj" />
+        </div>
     </BoxWithTitleVue>
 </template>
