@@ -10,7 +10,7 @@
 
 - 뷰 공식 문서는 너무 뜬구름
 
-## 결론부터 말해서
+## 결론부터 말해
 
 1. 핵심 로직이 주로 부모 컴포넌트에 존재한다면 event(emit) 방식이 효율적
 
@@ -21,6 +21,23 @@
 1. 자식 컴포넌트 끼리 통신해야 하는 상황이라면 store 패턴이 어울릴 수도 (그러라고 있는거 아닌데)
 
 1. 객체 이용 시 reactivity를 유지하는 것은 편리하지만 side effect를 심하게 발생시키므로 매우 주의하여 사용
+
+1. (사견) 유지보수를 생각한다면 불변성을 이용한 expose 패턴이 좋아보임. 간단한건 그냥 v-model event emit 으로 ㄱㄱ.
+
+## Usage
+
+### requirement
+
+- node >= 18
+
+### command
+
+```sh
+git clone https://github.com/rpdladps/vue3-how-to-communicate-between-components.git
+cd vue3-how-to-communicate-between-components
+npm install
+npm run dev
+```
 
 ## 자세한 설명
 
@@ -105,6 +122,8 @@ defineExpose({ constant, makeRandomConstant, msg, getMsg, makeRandomMsg, removeM
 
 - 부모 컴포넌트에서 ref에 컴포넌트 등록 후, expose된 이름들 호출 가능
 
+- 이 패턴이 react랑 좀 비슷한 것 같기도 함 (리액트..안배워서....잘..몰...루....JSX가..뭥..)
+
 - (중요) expose는 기본적으로 불변임
 
 - 컴포넌트의 데이터를 변경하려면 getter, setter를 선언 한 후 expose 해야 함
@@ -144,4 +163,8 @@ onMounted(() => {
 
 ### Provide() / Inject()
 
+- 추가 중
+
 ### useStore() with Pinia
+
+- 추가 중
